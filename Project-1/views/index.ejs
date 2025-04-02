@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Task Manager</h1>
+    <form action="/addData" method="post">
+        <input type="text" name="name" id="" placeholder="Enter your Task"><br><br>
+        <select name="priority" id="">
+            <option value="" selected disabled>Select Priority</option>
+            <option value="high">High</option>
+            <option value="medium">Medium</option>
+            <option value="low">Low</option>
+
+        </select><br><br>
+        <select name="status" id="">
+            <option value="" selected disabled>Select Your Status</option>
+            <option value="pending">Pending</option>
+            <option value="">Complete</option>
+            <option value="">Reject</option>
+
+        </select>
+        <br><br>
+        <button type="submit">Add Task</button>
+
+    </form><br><br>
+    <table border="1" width="30%">
+        <thead>
+            <tr>
+                <th>id</th>
+                <th>Task</th>
+                <th>Priority</th>
+                <th>Status</th>
+                <th colspan="2">Action</th>
+            </tr>
+        </thead>
+        <%task_record.map((e,i)=>{%>
+            <tr>
+                <td>
+                    <%=e.id%>
+                </td>
+                <td>
+                    <%=e.name%>
+                </td>
+                <td>
+                    <%=e.priority%>
+                </td>
+                <td>
+                    <%=e.status%>
+                </td>
+
+                <td><a href="/editData/<%=e.id%>"></style><button>Edit</button></a></td>
+                <td><a href="/deleteData?id=<%=e.id%>"><button>Delete</button></a></td>
+
+            </tr>
+            <%})%>
+    </table>
+</body>
+
+</html>

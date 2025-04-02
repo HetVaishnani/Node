@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="/updateData" method="post">
+        <input type="text" value="<%=singleData.id%>" hidden placeholder="enter student name" name="id">
+        <input type="text" value="<%=singleData.name%>" placeholder="enter student name" name="name">
+        <input type="text" value="<%=singleData.subject%>" placeholder="enter student subject" name="subject">
+        <button type="submit">update</button>
+    </form>
+    
+</body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <form action="/addData" method="post">
+        <input type="text" placeholder="enter student name" name="name">
+        <input type="text" placeholder="enter student subject" name="subject">
+        <button type="submit">submit</button>
+    </form>
+
+    <table border="1" width="30%" style="margin: auto;">
+        <thead>
+            <tr>
+                <th>id</th>
+                <th>name</th>
+                <th>subject</th>
+                <th colspan="2">Action</th>
+
+            </tr>
+        </thead>
+        <%students.map((e,i)=>{%>
+            <tr>
+                <td>
+                    <%=e.id%>
+                </td>
+                <td>
+                    <%=e.name%>
+                </td>
+                <td>
+                    <%=e.subject%>
+                </td>
+
+                <td><a href="/editData/<%=e.id%>"><button>Edit</button></a></td>
+                <td><a href="deleteData?id=<%=e.id%>"><button>Delete</button></a></td>
+
+
+            </tr>
+            <%})%>
+    </table>
+</body>
+
+</html>
